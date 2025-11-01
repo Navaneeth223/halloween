@@ -1,40 +1,42 @@
 :root{
---bg:#0b0b0b;
---card:#111;
---accent:#ff6f00;
---muted:#aaa;
+  --bg:#0b0b0b;
+  --card:#111;
+  --accent:#ff6f00;
+  --muted:#aaa;
 }
 *{box-sizing:border-box}
 html,body,#app{height:100%;}
 body{
-margin:0;
-font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-background:linear-gradient(180deg,#050505 0%, #161616 100%);
-color:#fff;
--webkit-font-smoothing:antialiased;
+  margin:0;
+  font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,#050505 0%, #161616 100%);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
 }
+
+/* GLOBAL helper to hide things */
+.hidden{display:none !important;}
+
 header{padding:18px 16px 6px; text-align:center}
 header h1{font-family:'Creepster', cursive; margin:0; font-size:28px; color:var(--accent); text-shadow:0 2px 6px rgba(0,0,0,.8)}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px; padding:12px; margin:12px; box-shadow:0 6px 18px rgba(0,0,0,0.6);}
 #camera-section{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;}
 video{width:100%; max-width:720px; height:auto; border-radius:10px; background:#000}
+canvas{border-radius:10px; display:block;}
 .controls{display:flex; gap:10px; padding:12px}
 .btn{background:linear-gradient(180deg, #ff8a00, #ff6f00); border:none; padding:12px 16px; border-radius:10px; color:#111; font-weight:700; font-size:16px}
-.btn.hidden{display:none}
 #sticker-list{display:flex; gap:10px; flex-wrap:wrap; padding:6px}
 .sticker-thumb{width:64px; height:64px; object-fit:contain; border-radius:8px; border:2px solid rgba(255,255,255,0.06); box-shadow:0 4px 10px rgba(0,0,0,0.6)}
 .hint{color:var(--muted); font-size:13px}
-.workspace{position:relative; margin:12px; min-height:300px; max-width:720px; width:calc(100% - 24px); border-radius:8px; overflow:hidden}
+.workspace{position:relative; margin:12px; min-height:300px; max-width:720px; width:calc(100% - 24px); border-radius:8px; overflow:hidden; background:transparent}
 .workspace img.sticker{position:absolute; width:96px; height:auto; touch-action:none; user-select:none}
-.workspace.hidden{display:none}
-.ghost-popup{position:fixed; inset:0; background:rgba(0,0,0,0.9); display:flex; align-items:center; justify-content:center; z-index:9999}
+.ghost-popup{position:fixed; inset:0; background:rgba(0,0,0,0.95); display:flex; align-items:center; justify-content:center; z-index:9999}
 .ghost-popup img{max-width:100%; max-height:100%; transform:scale(0.9); animation:ghost-pop .25s ease-out forwards}
 @keyframes ghost-pop{0%{transform:scale(0.6);opacity:0}100%{transform:scale(1);opacity:1}}
 footer{padding:12px; text-align:center; color:var(--muted); font-size:12px}
 
-
 /* mobile-friendly tweaks */
 @media (max-width:480px){
-.btn{flex:1; padding:14px; font-size:18px}
-.sticker-thumb{width:56px;height:56px}
+  .btn{flex:1; padding:14px; font-size:18px}
+  .sticker-thumb{width:56px;height:56px}
 }
