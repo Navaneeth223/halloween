@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>Happy Halloween Photo Booth</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+<header>
+<h1>Happy Halloween Photo Booth</h1>
+</header>
+
+
+<!-- camera area -->
+<section id="camera-section" class="card">
+<video id="video" autoplay playsinline></video>
+<canvas id="canvas" style="display:none"></canvas>
+
+
+<div class="controls">
+<button id="captureBtn" class="btn">📸 Capture</button>
+<button id="retakeBtn" class="btn hidden">↺ Retake</button>
+<button id="saveBtn" class="btn hidden">💾 Save Photo</button>
+</div>
+</section>
+
+
+<!-- sticker picker + sticker palette -->
+<section id="stickers-section" class="card hidden">
+<h2>Stickers</h2>
+<div id="sticker-list" class="sticker-list">
+<!-- stickers injected by script -->
+</div>
+<p class="hint">Tap a sticker to add it. Drag stickers on the photo to reposition. Pinch to resize (mobile) or use handles.</p>
+</section>
+
+
+<!-- sticker workspace overlay -->
+<div id="workspace" class="workspace hidden">
+<!-- stickers dropped here (absolute positioned) -->
+</div>
+
+
+<!-- ghost popup (hidden) -->
+<div id="ghostPopup" class="ghost-popup hidden">
+<img id="ghostImg" src="" alt="ghost">
+</div>
+
+
+<footer>
+<small>Made with ❤️ — Replace sticker URLs in <code>script.js</code> as needed.</small>
+</footer>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
