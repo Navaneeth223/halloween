@@ -1,61 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title>Happy Halloween Photo Booth</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎃 Halloween Photo Booth</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
 </head>
 <body>
-<div id="app">
-<header>
-<h1>Happy Halloween Photo Booth</h1>
-</header>
+  <div class="container">
+    <h1>🎃 Happy Halloween!</h1>
 
+    <!-- Camera Section -->
+    <div class="camera-area" id="cameraArea">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="canvas"></canvas>
+      <div id="stickers-layer"></div>
+    </div>
 
-<!-- camera area -->
-<section id="camera-section" class="card">
-<video id="video" autoplay playsinline></video>
-<canvas id="canvas" style="display:none"></canvas>
+    <!-- Control Buttons -->
+    <div class="controls">
+      <button id="captureBtn">📸 Capture</button>
+      <button id="saveBtn" disabled>💾 Save</button>
+      <button id="retakeBtn" disabled>🔄 Retake</button>
+    </div>
 
+    <!-- Sticker Section -->
+    <div class="stickers">
+      <h3>🕷️ Stickers</h3>
+      <div class="sticker-list">
+        <img src="assets/stickers/pumpkin.png" alt="pumpkin" class="sticker" />
+        <img src="assets/stickers/bat.png" alt="bat" class="sticker" />
+        <img src="assets/stickers/skull.png" alt="ghost" class="sticker" />
+        <img src="assets/stickers/spider.png" alt="spider" class="sticker" />
+        <img src="assets/stickers/emoji1.png" alt="emoji1" class="sticker" />
+      </div>
+    </div>
 
-<div class="controls">
-<button id="captureBtn" class="btn">📸 Capture</button>
-<button id="retakeBtn" class="btn hidden">↺ Retake</button>
-<button id="saveBtn" class="btn hidden">💾 Save Photo</button>
-</div>
-</section>
+    <!-- Ghost Scare Popup -->
+    <div id="ghostPopup">
+      <img src="assets/ghost.png" alt="ghost" />
+      <audio id="scream" src="assets/scream.mp3"></audio>
+    </div>
+  </div>
 
-
-<!-- sticker picker + sticker palette -->
-<section id="stickers-section" class="card hidden">
-<h2>Stickers</h2>
-<div id="sticker-list" class="sticker-list">
-<!-- stickers injected by script -->
-</div>
-<p class="hint">Tap a sticker to add it. Drag stickers on the photo to reposition. Pinch to resize (mobile) or use handles.</p>
-</section>
-
-
-<!-- sticker workspace overlay -->
-<div id="workspace" class="workspace hidden">
-<!-- stickers dropped here (absolute positioned) -->
-</div>
-
-
-<!-- ghost popup (hidden) -->
-<div id="ghostPopup" class="ghost-popup hidden">
-<img id="ghostImg" src="" alt="ghost">
-</div>
-
-
-<footer>
-<small>Made with ❤️ </small>
-</footer>
-</div>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
